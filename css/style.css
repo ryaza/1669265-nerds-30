@@ -53,8 +53,8 @@
 
 /* ГЛОБАЛЬНЫЕ СТИЛИ */
 
-body {
-  min-width: 1160px;
+.page-body {
+  min-width: 1200px;
   margin: 0;
   padding: 0;
   font-family: "Roboto", "Arial", sans-serif;
@@ -63,6 +63,15 @@ body {
   font-size: 16px;
   color: var(--basic-black);
   background-color: var(--basic-white);
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+.container {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 a {
@@ -94,6 +103,12 @@ img {
   list-style: none;
 }
 
+/* Grid */
+
+.page {
+  height: 100%;
+}
+
 /*все кнопки и ссылки ввиде кнопок*/
 
 .btn {
@@ -113,11 +128,41 @@ img {
 
 /* header */
 
-.nav {
+.header {
+  outline: 5px solid rgba(0, 255, 0, 0.7);
+  outline-offset: -5px;
   background-color: var(--basic-grey-extra-light);
+  margin-bottom: 80px;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 160px 1fr min-content;
+  column-gap: 40px;
   line-height: 30px;
   text-transform: uppercase;
   font-weight: 500;
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+}
+
+.header-logo {
+  outline: 5px solid rgba(255, 0, 0, 0.3);
+  outline-offset: -5px;
+
+}
+
+.site-nav{
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+  margin: 0;
+  justify-self: center;
+}
+
+.cart {
+  outline: 5px solid rgba(255, 0, 255, 0.3);
+  outline-offset: -5px;
+
 }
 
 .site-nav a:hover,
@@ -131,10 +176,39 @@ img {
   opacity:0.3;
 }
 
+/*main*/
+
+
 /*main Cекция -Как работает студия*/
 
 .work-studio {
+  outline: 5px solid rgba(0,0,255,0.5);
+  outline-offset: -5px;
   background-color: var(--basic-grey-extra-light);
+  margin-bottom: 80px;
+}
+
+.slider {
+  display: grid;
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+}
+
+.slider-inner-radio {
+  outline: 5px solid rgba(250,200,0,0.5);
+  outline-offset: -5px;
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+.slider-slides {
+  display: grid;
+}
+
+.slide {
+  outline: 5px solid rgba(200, 0, 200, 0.3);
+  outline-offset: -5px;
+  grid-column: 1/-1;
 }
 
 .slide-slogan {
@@ -162,7 +236,28 @@ img {
 }
 
 
-/* main Cекция -Услуги веб-студии*/
+
+/* main Cекция -Услуги дизайн-студии*/
+
+.services-studio {
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+  margin-bottom: 80px;
+}
+
+.services-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 40px;
+
+}
+
+.service-item {
+  outline: 5px solid rgba(0,100,0,0.5);
+  outline-offset: -5px;
+}
 
 .service-item h3 {
   font-weight: 700;
@@ -249,6 +344,26 @@ img {
 
 /*main Секция - О дизайн-студии*/
 
+.about-studio {
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+  margin-bottom: 74px;
+}
+
+.wrap-about {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 40px;
+}
+
+.about-description,
+.about-benefits {
+  outline: 5px solid rgba(0,100,0,0.5);
+  outline-offset: -5px;
+}
+
 .description-slogan {
   font-weight: 500;
   font-size: 45px;
@@ -285,7 +400,26 @@ img {
   line-height: 40px;
 }
 
+/*Партнеры*/
+.partners-studio {
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+  margin-bottom: 80px;
+}
+
+
+/* Футер*/
+
+.footer {
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  outline-offset: -5px;
+}
+
 /*Футер Как нас найти*/
+.footer-contacts {
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+}
 
 .adress-title {
   font-weight: 700;
@@ -310,9 +444,29 @@ img {
 }
 
 /* Футер Давайте дружить*/
+.footer-social {
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.wrap-social {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 40px;
+}
+
+.social-list,
+.social-inner {
+  outline: 5px solid rgba(0,100,0,0.5);
+  outline-offset: -5px;
+  margin: 0;
+}
 
 .btn-social {
   background-color: var( --basic-grey-light);
+
 }
 
 .btn-social:hover {
@@ -339,10 +493,22 @@ img {
 }
 
 /*КАТАЛОГ*/
-
+/*
+.page-catalog {
+  outline: 5px solid rgba(255,100,0,0.5);
+  outline-offset: -5px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 40px;
+  }
+*/
 .wrap-catalor-title {
   background-color: var(--basic-grey-extra-light);
   text-align: center;
+ /* outline: 5px solid rgba(0,100,0,0.5);
+  outline-offset: -5px;
+  margin-bottom: 55px;
+  grid-column: 1/-1;*/
 }
 
 .wrap-catalor-title h1 {
@@ -352,7 +518,12 @@ img {
 }
 
 /*Фильтр шаблонов Стоимость*/
-
+/*
+.wrap-filters {
+  outline: 5px solid rgba(255, 0, 0, 0.3);
+  outline-offset: -5px;
+}
+*/
 .filter-cost {
   text-transform: uppercase;
 }
@@ -406,6 +577,13 @@ img {
 }
 
 /*Каталог шаблонов Сортировать*/
+
+/*
+.wrap-catalog {
+  outline: 5px solid rgba(250,200,0,0.5);
+  outline-offset: -5px;
+}
+*/
 
 .catalog-sort {
   text-transform: uppercase;
